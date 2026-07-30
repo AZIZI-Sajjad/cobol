@@ -1,47 +1,16 @@
-IDENTIFICATION DIVISION.
-PROGRAM-ID. COBOLT-2.
-
-DATA DIVISION.
-
-WORKING-STORAGE SECTION.
-
-01 WS-NOM                PIC X(30).
-01 WS-AGE                PIC 9(3).
-01 WS-COMPTEUR           PIC 9 VALUE 1.
-01 WS-ANNEE-NAISSANCE    PIC 9(4).
-01 WS-ANNEE-COURANTE     PIC 9(4) VALUE 2026.
-
-PROCEDURE DIVISION.
-
-DEBUT-PROGRAMME.
-
-    DISPLAY "Quel est votre nom ?"
-    ACCEPT WS-NOM
-
-    DISPLAY "Quel est votre age ?"
-    ACCEPT WS-AGE
-
-    COMPUTE WS-ANNEE-NAISSANCE =
-        WS-ANNEE-COURANTE - WS-AGE
-    END-COMPUTE
-
-    DISPLAY "Bonjour " WS-NOM
-    DISPLAY "Vous etes ne approximativement en "
-        WS-ANNEE-NAISSANCE
-
-    IF WS-AGE >= 18
-        DISPLAY "Vous etes majeur."
-    ELSE
-        DISPLAY "Vous etes mineur."
-    END-IF
-
-    DISPLAY "Comptage de 1 a 5 :"
-
-    PERFORM UNTIL WS-COMPTEUR > 5
-        DISPLAY "Compteur : " WS-COMPTEUR
-        ADD 1 TO WS-COMPTEUR
-    END-PERFORM
-
-    DISPLAY "Fin du programme."
-
-    STOP RUN.
+000001
+000002 IDENTIFICATION DIVISION.
+000003 PROGRAM-ID. HELLO-WORLD.
+000004 PROCEDURE DIVISION.
+000005     DISPLAY "Voir le fichier cobol-2.cob"
+000006     DISPLAY "Les lignes sont numérotées dans le programme"
+000007     DISPLAY "Avantage : compatibilité avec les anciens codes !"
+000008             "Avec les nouveaux IDE, il n'est plus nécessaire"
+000009             "de numéroter les lignes."
+000010     DISPLAY "Inconvénient : dans les gros programmes,"
+000011             "modifier une ligne au milieu oblige parfois à "
+000012             "corriger les numéros des lignes suivantes."
+000013     DISPLAY "Il y a peu d'intérêt à conserver ces numéros."
+000014     DISPLAY "Même avec des numéros répétés, le programme"
+000015     DISPLAY "fonctionne correctement !"
+000016     STOP RUN.
